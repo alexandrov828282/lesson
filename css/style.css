@@ -1,0 +1,36 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    /* width: 500px; */
+    /* height: 500px; */
+    margin: auto auto;
+    /* border: 1px solid red; */
+}
+
+.block-inp {
+    display: flex;
+    margin-top: 50px;
+    position: relative;
+    /* border: 1px solid red; */
+
+}
+
+.block-btn {
+    margin-top: 50px;
+}
+
+.block-paragraph {
+    margin-top: 50px;
+}
+
+.center {
+    align-self: center;
+}
+
+span {
+    visibility: hidden;
+    display: block;
+    position: absolute;
+    color: brown;
+    /* border: 1px solid red; */
+}
