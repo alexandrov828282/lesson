@@ -1,8 +1,10 @@
-`Дана JSON строка '["Коля", "Вася", "Петя"]'. 
-Преобразуйте ее в массив JavaScript и выведите на экран элемент "Петя".`
+document.cookie = "name=Вася";
 
-let str_json = '["Коля", "Вася", "Петя"]';
+alert(getCookie('name'));
 
-let json = JSON.parse(str_json);
-
-console.log(json);
+function getCookie(name) {
+     let matches = document.cookie.match(new RegExp(
+       "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+     ));
+     return matches ? decodeURIComponent(matches[1]) : undefined;
+   }
