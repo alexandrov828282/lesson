@@ -1,8 +1,8 @@
+`Дана JSON строка '["Коля", "Вася", "Петя"]'. 
+Преобразуйте ее в массив JavaScript и выведите на экран элемент "Петя".`
 
+let str_json = '["Коля", "Вася", "Петя"]';
 
-     let str = 'xaz x$z x-z xcz x+z x%z x*z';
+let json = JSON.parse(str_json);
 
-res = str.replace(/x[\-$\+]z/,'!');
-
-console.log(str);
-console.log(res);
+console.log(json);
