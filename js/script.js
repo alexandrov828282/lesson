@@ -2,9 +2,16 @@ document.cookie = "name=Вася";
 
 alert(getCookie('name'));
 
+// function getCookie(name) {
+//   let matches = document.cookie.match(new RegExp(
+//     "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+//     ));
+//     return matches ? decodeURIComponent(matches[1]) : undefined;
+//   }
+  
 function getCookie(name) {
-     let matches = document.cookie.match(new RegExp(
-       "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
-     ));
-     return matches ? decodeURIComponent(matches[1]) : undefined;
-   }
+  var matches = document.cookie.match(new RegExp(
+    '(?:^|\s)' + name.replace(/([.$?*+\\\/{}|()\[\]^])/g, '\\$1') + "=(.*?)(?:;|$)"
+  ));
+  return matches ? decodeURIComponent(matches[1]) : undefined;
+}
