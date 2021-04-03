@@ -1,3 +1,5 @@
+@time-transition: .5s;
+
 p {
    margin: 0;
    padding: 0;
@@ -33,7 +35,7 @@ footer {
 
    height: 300px;
    animation-name: animationpage1;
-   animation-duration: 1s;
+   animation-duration: @time-transition;
    animation-timing-function: linear;
    animation-delay: 1s;
    animation-iteration-count: 1;
@@ -85,20 +87,103 @@ footer {
    }
 }
 
-@keyframes animationpage1{
-   
-   0%{
+.main-page-2 {
+
+   opacity: 0;
+   height: 0;
+   animation-name: animationpage2;
+   animation-duration: @time-transition;
+   animation-timing-function: linear;
+   animation-delay: 1s;
+   animation-iteration-count: 1;
+   animation-direction: normal;
+   animation-fill-mode: forwards;
+
+   &-bg {
+      width: 100%;
+      height: 100%;
+      z-index: -10;
+      position: relative;
+      background: url(/img/img-2.jpg);
+      background-size: cover;
+
+      &::after {
+         z-index: -9;
+         content: '';
+         position: absolute;
+         top: 0;
+         bottom: 0;
+         left: 0;
+         right: 0;
+         background: rgba(0, 0, 0, .5);
+      }
+   }
+
+   &-outer {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      // border: 1px solid #fff;
+   }
+
+   &-inner {
+      color: #fff;
+      padding: 0 50px;
+      // border: 1px solid #fff;
+
+      h1 {
+         text-align: center;
+         font-size: 70px;
+      }
+
+      h2 {
+         text-align: justify;
+         font-size: 30px;
+      }
+
+   }
+}
+
+@keyframes animationpage1 {
+
+   0% {
       opacity: 1;
+      height: 300px;
    }
 
-   99%{
-      opacity: 0;
-      height: 300px;;
+   1%{
+      opacity: 1;
+      height: 300px;
+      position: absolute;
    }
 
-   100%{
+   99% {
       opacity: 0;
-      display: none;
+      height: 300px;
+      position: absolute;
+   }
+
+   100% {
+      opacity: 0;
       height: 0;
+      position: absolute;
+   }
+}
+
+@keyframes animationpage2 {
+
+   0% {
+      opacity: 0;
+      height: 0;
+   }
+
+   1% {
+      opacity: 0;
+      height: 600px;
+   }
+
+   100% {
+      opacity: 1;
+      height: 600px;
    }
 }
